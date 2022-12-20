@@ -1,23 +1,23 @@
 import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const url = "https://real-rose-nightingale-cap.cyclic.app/"
+  const [books, setBooks] = useState([])
+
+  const getBooks = async() => {
+    const response = await fetch(url)
+    const data = await response.json()
+    setBooks(data)
+    console.log(data)
+  }
+  console.log(getBooks)
+  useEffect (() => {getBooks()}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
