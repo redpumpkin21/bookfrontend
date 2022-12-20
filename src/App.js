@@ -17,7 +17,13 @@ function App() {
 
   return (
     <div className="App">
-      
+      {books.map((books) => (
+        <div>
+          <p>{books.Synopsis}</p>
+          <p>{books.Title}</p>
+          <h1>hey</h1>
+          </div>
+      ))}
     </div>
   );
 }
