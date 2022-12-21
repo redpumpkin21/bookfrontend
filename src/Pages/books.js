@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
-const Books = (books) => {
+import SearchBar from "../Components/searchbar"
+const Books = (props) => {
     
 
     return (
+    <div>
+        <SearchBar />
         <div className="container">
-      {books.books.map((books) => (
+      {props.filteredBooks.map((books, index) => (
         <div className = 'bookContainer'>
           <p>{books.Title}</p>
           <Link to = {`/${books?.id}`}>
@@ -13,6 +16,7 @@ const Books = (books) => {
         </div>
         ))}
       </div>
+    </div>
       
     )
 }

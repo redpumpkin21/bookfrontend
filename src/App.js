@@ -19,7 +19,13 @@ function App() {
           Author: book.Author,
           Synopsis: book.Synopsis,
           id: book._id,
-          Cover: book.Cover
+          Cover: book.Cover,
+          Publisher: book.Publisher,
+          Genre: book.Genre,
+          Year: book.Year,
+          Review: book.Review,
+          Pages: book.Pages
+
         }
       })
       setBooks(trying)
@@ -28,7 +34,22 @@ function App() {
   
   useEffect (() => {getBooks()}, [])
  
+  const{search} = window.location
+  const query = new URLSearchParams(search).get('s')
+  const filterBooks = (book, query) => {
+      if(!query) {
+        return book
+      }
+      return book.filter((book) => {
+        const bookTitle = book.Title.toLowerCase()
+        
+        return(
+          bookTitle.includes(query.toLowerCase())
+        ) 
+      })
+  }
 
+  const filteredBooks = filterBooks(books, query)
 
   return (
     <div className="App">
@@ -36,7 +57,9 @@ function App() {
       <Routes>
 
       
-      <Route path = "/" element={<Books books={books}/>}></Route>
+      <Route path = "/" element={<Books books={books}
+        filteredBooks = { filteredBooks }
+      />}></Route>
 
       <Route path = "/:id" element = {<Book books={books}       
       />}></Route>
