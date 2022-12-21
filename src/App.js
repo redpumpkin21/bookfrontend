@@ -17,13 +17,16 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container">
       {books.map((books) => (
-        <div>
-          <p>{books.Synopsis}</p>
+        <div className = 'bookContainer'>
           <p>{books.Title}</p>
-          <h1>hey</h1>
-          </div>
-      ))}
+          <img src={books.Cover} className="cover"/> 
+        </div>
+        ))}
+      </div>
+      
+      
     </div>
   );
 }
