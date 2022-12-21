@@ -10,6 +10,7 @@ const Books = (props) => {
       {props.filteredBooks.map((books, index) => (
         <div className = 'bookContainer'>
           <p>{books.Title}</p>
+          <p>{books.Writer}</p>
           <Link to = {`/${books?.id}`}>
           <img src={books.Cover} className="cover"/>
           </Link>

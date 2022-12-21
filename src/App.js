@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Route, Routes, useMatch, useParams } from 'react-router-dom';
+import { Route, Routes, useMatch, useParams, useSearchParams } from 'react-router-dom';
 import Books from './Pages/books';
 import Book from './Pages/book';
 function App() {
   const url = "https://real-rose-nightingale-cap.cyclic.app/"
   const [books, setBooks] = useState([])
- 
+ // const [searchParams, setSearchParams] = useSearchParams()
   const params = useParams()
   const getBooks = async() => {
     
@@ -16,7 +16,7 @@ function App() {
       const trying = data.map((book, index) => {
         return{
           Title: book.Title,
-          Author: book.Author,
+          Writer: book.Author,
           Synopsis: book.Synopsis,
           id: book._id,
           Cover: book.Cover,
@@ -33,21 +33,27 @@ function App() {
   }
   
   useEffect (() => {getBooks()}, [])
- 
+ console.log(books[0]?.Writer)
   const{search} = window.location
   const query = new URLSearchParams(search).get('s')
+  //const query = searchParams.get('query')
   const filterBooks = (book, query) => {
       if(!query) {
         return book
       }
-      return book.filter((book) => {
+      return( book.filter((book) => {
         const bookTitle = book.Title.toLowerCase()
-        
+        const bookWriter = book.Writer.toLowerCase()
+        const bookGenre = book.Genre.toLowerCase()
+      
         return(
-          bookTitle.includes(query.toLowerCase())
-        ) 
+          bookTitle.includes(query.toLowerCase())||
+          bookWriter.includes(query.toLowerCase())||
+          bookGenre.includes(query.toLowerCase())   
+
+        )
       })
-  }
+  )}
 
   const filteredBooks = filterBooks(books, query)
 
