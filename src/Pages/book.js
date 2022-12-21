@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
-const Book = (books, match, boker) => {
+const Book = (books) => {
     const params =useParams()
    
-    const book = books?.books?.find((book) => book?.id === params.id)
+    const book = books.books.find((book) => book.id === params.id)
     
     return(
         <div>
