@@ -1,6 +1,6 @@
 const SearchBar = () => {
     return(
-    <form action="/" method = "get">
+    <form action="/" method = "get" className="searcher">
         <label htmlFor="header-search">
             <span className="visuallyHidden"> Search Here</span>
         </label>
