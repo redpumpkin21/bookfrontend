@@ -7,23 +7,27 @@ import {
   Nav,
   NavItem,
   NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
 } from 'reactstrap';
- import SearchBar from './searchbar';
-const Navar = (props) => {
-  const [collapsed, setCollapsed] = useState(true);
+import SearchBar from './searchbar';
 
-  const toggleNavbar = () => setCollapsed(!collapsed);
+
+const Navar = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div className="navar">
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="me-auto">
-          betterreads
-        </NavbarBrand>
-        
-        <NavbarToggler onClick={toggleNavbar} className="me-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+      <Navbar {...args}>
+        <NavbarBrand href="/">betterreads</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink href="/components/">Components</NavLink>
             </NavItem>
@@ -31,9 +35,12 @@ const Navar = (props) => {
               <NavLink href="https://github.com/reactstrap/reactstrap">
                 GitHub
               </NavLink>
-              <SearchBar />
+            </NavItem>
+            <NavItem>
+                <SearchBar />
             </NavItem>
           </Nav>
+          
         </Collapse>
       </Navbar>
     </div>
