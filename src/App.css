@@ -8,16 +8,35 @@
 .linebr{
   white-space: pre-wrap;
 }
-
+/* book conatiners */
 .container{
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 50px;
+  align-items: stretch;
 }
 .bookContainer{
   display:flex;
+  flex-direction: row-reverse;
+  text-align: center;  
+  gap: 20px;
+ 
+}
+
+.bookContainer img{
+  width: 130px;
+}
+.wordContainer{
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.wordContainer p{
   text-align: center;
+  
 }
 
 /* navbar */
