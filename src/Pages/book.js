@@ -5,7 +5,7 @@ const Book = (books) => {
     const book = books.books.find((book) => book.id === params.id)
     
     return(
-        <div className="container2">        
+        <div className=".linebr">        
             <div className="singlebContainer">
                 <p>single book goes here</p>
                 <p>{book?.Title}</p>
