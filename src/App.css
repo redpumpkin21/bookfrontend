@@ -31,3 +31,11 @@
   padding-bottom: 2em;
   text-align: center;
 }
+
+.searchButton{
+  background-color: #74B3CE ;
+}
+
+.visuallyHidden{
+  margin-right: 1em;
+}

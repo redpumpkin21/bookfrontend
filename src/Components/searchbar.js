@@ -5,7 +5,7 @@ const SearchBar = () => {
             <span className="visuallyHidden"> Search Here</span>
         </label>
         <input  type = "text" id="header-search" placeholder="Search for Books" name="s"/>
-        <button type="submit">Search</button>
+        <button type="submit" className="searchButton">Search</button>
     </form>
     )
 }
