@@ -30,6 +30,7 @@
   gap: 50px;
   align-items: stretch;
   margin-top: 2em;
+  padding: 0 1em 0 1em;
 }
 .bookContainer{
   display:flex;
@@ -86,22 +87,14 @@
 }
 
 @media only screen and (min-width: 768px){
-  /* .navbar-toggler{
-    display: none!important
+  .entireContainer{
+    width: 90%;
+    margin-right: 0;
+    padding: 0 4em 0 4em;
   }
-  .navbar-collapse{
-    display:flex!important
+  .bookContainer img{
+    width: 200px
   }
-  /* .collapse:not{
-    display: block!important;
-  } */
-  /* .me-auto, .navbar-nav, .navbar-expand-sm{
-    display: flex;
-    flex-direction: row!important;
-    margin: 0!important;
-    margin-right: 0px!important;
-    justify-content: flex-end!important
-  } */ 
 }
 
 @media only screen and (min-width: 1024px){
