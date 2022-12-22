@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-
+ import SearchBar from './searchbar';
 const Navar = (props) => {
   const [collapsed, setCollapsed] = useState(true);
 
@@ -20,6 +20,7 @@ const Navar = (props) => {
         <NavbarBrand href="/" className="me-auto">
           betterreads
         </NavbarBrand>
+        
         <NavbarToggler onClick={toggleNavbar} className="me-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
@@ -30,6 +31,7 @@ const Navar = (props) => {
               <NavLink href="https://github.com/reactstrap/reactstrap">
                 GitHub
               </NavLink>
+              <SearchBar />
             </NavItem>
           </Nav>
         </Collapse>

@@ -2,6 +2,7 @@
 /* body */
 .App{
   background-color: #EAEAEA;
+  min-height: 100vh;
 }
 
 /* navbar */
@@ -10,11 +11,7 @@
 }
 
 /* searchbar */
-.searcher{
-  padding-top: 2em;
-  padding-bottom: 2em;
-  text-align: center;
-}
+
 
 .searchButton{
   background-color: #74B3CE ;
