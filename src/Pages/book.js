@@ -6,13 +6,12 @@ const Book = (books) => {
     
     return(
         <div className="linebr">        
-            <div className="singlebContaine">
-                <p>single book goes here</p>
+            <div className="singlebContainer">                
                 <p>{book?.Title}</p>
                 <img src={book?.Cover}/>
                 <p>By: {book?.Writer}</p>
-                <p>{book?.Synopsis}</p>
-                <p>{book?.Year}</p>       
+                <p className="synopsis">{book?.Synopsis}</p>
+                <p>Published in: {book?.Year}</p>       
             </div>
         </div>
     )
