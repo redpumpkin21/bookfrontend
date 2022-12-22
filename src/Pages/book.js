@@ -11,7 +11,14 @@ const Book = (books) => {
                 <img src={book?.Cover}/>
                 <p>By: {book?.Writer}</p>
                 <p className="synopsis">{book?.Synopsis}</p>
-                <p>Published in: {book?.Year}</p>       
+                <p className="review">{book?.Review}</p>
+                <div className="bookInfoCont">
+                    <p>Published by: {book?.Publisher}</p>
+                    <p>Year: {book?.Year}</p>
+                    <p>Genre: {book?.Genre}</p>
+                    <p>Pages: {book?.Pages}</p>
+                </div>
+                      
             </div>
         </div>
     )

@@ -73,6 +73,16 @@
   white-space: pre-wrap;
 }
 
-.synopsis{
+.synopsis, .review{
   padding: 0 2em 0 2em;
+}
+
+.bookInfoCont{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+  padding: 0 2em 0 2em;
+  /* text-align: center; */
+  gap: .5em;
 }
