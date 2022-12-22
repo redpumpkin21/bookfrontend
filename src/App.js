@@ -6,6 +6,7 @@ import { Route, Routes, useMatch, useParams, useSearchParams } from 'react-route
 import Books from './Pages/books';
 import Book from './Pages/book';
 import Navar from './Components/navar';
+import About from './Pages/about';
 
 
 function App() {
@@ -65,7 +66,7 @@ function App() {
     <div className="App">
       <Navar />
       <Routes>
-      
+
       
       <Route path = "/" element={<Books books={books}
         filteredBooks = { filteredBooks }
@@ -73,6 +74,8 @@ function App() {
 
       <Route path = "/:id" element = {<Book books={books}       
       />}></Route>
+
+      <Route path = "/about" element = {<About />}></Route>
       </Routes>
     </div>
   );

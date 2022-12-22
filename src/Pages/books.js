@@ -6,7 +6,7 @@ const Books = (props) => {
     return (
     <div>
         <p>WElcome to Better reads. Browse the catalogue. Search for books by genre, title, and author.</p>
-        <div className="container">
+        <div className="entireContainer">
       {props.filteredBooks.map((books, index) => (
         <div className = 'bookContainer'>
             <div className="wordContainer">

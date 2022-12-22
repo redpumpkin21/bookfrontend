@@ -23,7 +23,7 @@
 
 
 /* all book conatiners */
-.container{
+.entireContainer{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -86,9 +86,22 @@
 }
 
 @media only screen and (min-width: 768px){
-  .container-fluid{
+  /* .navbar-toggler{
     display: none!important
   }
+  .navbar-collapse{
+    display:flex!important
+  }
+  /* .collapse:not{
+    display: block!important;
+  } */
+  /* .me-auto, .navbar-nav, .navbar-expand-sm{
+    display: flex;
+    flex-direction: row!important;
+    margin: 0!important;
+    margin-right: 0px!important;
+    justify-content: flex-end!important
+  } */ 
 }
 
 @media only screen and (min-width: 1024px){

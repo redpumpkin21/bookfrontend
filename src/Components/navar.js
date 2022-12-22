@@ -1,49 +1,39 @@
-import React, { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from 'reactstrap';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import SearchBar from './searchbar';
-
-
-const Navar = (args) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
+function Navar() {
   return (
-    <div className="navar">
-      <Navbar {...args}>
-        <NavbarBrand href="/">betterreads</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <NavItem>
-                <SearchBar />
-            </NavItem>
+    <Navbar  expand="lg" className="navar">
+      <Container fluid>
+        <Navbar.Brand href="/">betterreads</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="#action2">Link</Nav.Link>
+            <NavDropdown title="Github" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="https://github.com/redpumpkin21/bookfrontend">Frontend</NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/redpumpkin21/bookback">
+                Backend
+              </NavDropdown.Item>
+              
+            </NavDropdown>
+            <Nav.Link href="#" disabled>
+              Link
+            </Nav.Link>
           </Nav>
-          
-        </Collapse>
-      </Navbar>
-    </div>
+          <SearchBar />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
