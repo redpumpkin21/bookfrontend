@@ -1,9 +1,13 @@
 import logo from './logo.svg';
 import { useState, useEffect } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes, useMatch, useParams, useSearchParams } from 'react-router-dom';
 import Books from './Pages/books';
 import Book from './Pages/book';
+import Navar from './Components/navar';
+
+
 function App() {
   const url = "https://real-rose-nightingale-cap.cyclic.app/"
   const [books, setBooks] = useState([])
@@ -59,7 +63,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Navar />
       <Routes>
 
       

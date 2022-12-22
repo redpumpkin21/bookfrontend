@@ -5,11 +5,15 @@ const Book = (books) => {
     const book = books.books.find((book) => book.id === params.id)
     
     return(
-        <div>
-        <p>single book goes here</p>
-        <p>{book?.Title}</p>
-        <img src={book?.Cover}/>
-       
+        <div className="container2">        
+            <div className="singlebContainer">
+                <p>single book goes here</p>
+                <p>{book?.Title}</p>
+                <img src={book?.Cover}/>
+                <p>By: {book?.Writer}</p>
+                <p>{book?.Synopsis}</p>
+                <p>{book?.Year}</p>       
+            </div>
         </div>
     )
 }
