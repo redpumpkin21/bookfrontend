@@ -98,9 +98,27 @@
 }
 
 @media only screen and (min-width: 1024px){
-  
+  .entireContainer{
+    /* width: 90%;
+    padding-left: 12em; */
+    flex-direction: row;
+  }
+  .wordContainer{
+    width: 150px
+  }
+
 }
 
 @media only screen and (min-width: 1440px){
-  
+  .entireContainer{
+    /* padding: 0 17em 0 17em; */
+    width: 100%;
+    flex-direction: row;
+  }
+  .singlebContainer{
+    width: 10%;
+  }
+  .wordContainer{
+    width: 100px;
+  }
 }
