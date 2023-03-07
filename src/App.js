@@ -29,7 +29,9 @@ function App() {
           Genre: book.Genre,
           Year: book.Year,
           Review: book.Review,
-          Pages: book.Pages
+          Pages: book.Pages,
+          Link: book.Link,
+          Rating: book.Rating
 
         }
       })

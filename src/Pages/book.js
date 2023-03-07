@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom"
+import { ImAmazon } from "react-icons/im";
+import { Link } from "react-router-dom";
 const Book = (books) => {
     const params =useParams()
    
     const book = books.books.find((book) => book.id === params.id)
-    
+    console.log(book)
     return(
         <div className="linebr">        
             <div className="singlebContainer">                
@@ -19,7 +21,10 @@ const Book = (books) => {
                     <p>Year: {book?.Year}</p>
                     <p>Genre: {book?.Genre}</p>
                     <p>Pages: {book?.Pages}</p>
-                    <p>Link: button</p>
+                    
+                    <a href={`${book?.Link}`} target="_blank"><ImAmazon /></a>
+                    <Link to = {`${book?.Link}`}>Hey</Link>
+                    
                 </div>
                       
             </div>
